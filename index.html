@@ -203,14 +203,14 @@
     }
 </script>
     
-<audio id="bgMusic" loop controls style="position:fixed;bottom:80px;right:20px;z-index:9999;">
+<audio id="bgMusic" loop preload="auto">
   <source src="https://madhavipamula5-boop.github.io/Suprise-For-Akka-Bava/bg-music.mp3" type="audio/mpeg">
 </audio>
 
-<button onclick="playMusic()" style="position: fixed; bottom: 20px; right: 20px; padding: 12px 20px; background: #f69b4; color: white; border: none; border-radius: 25px; cursor: pointer; font-size: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 1000;">
-    Play Music
+<button onclick="document.getElementById('bgMusic').play(); this.innerHTML='⏸️ Pause Music';" style="position:fixed;bottom:20px;right:20px;padding:14px 28px;background:#ff1493;color:white;border:none;border-radius:30px;cursor:pointer;z-index:9999;font-weight:bold;">
+  ▶️ Play Music
 </button>
-
+    
 <script>
 function playMusic(){
   var music = document.getElementById("bgMusic");
