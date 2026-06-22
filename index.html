@@ -203,25 +203,28 @@
     }
 </script>
    <audio id="bgMusic" loop>
-     <source sr="bg-music.mp3" type="audio/mpeg">
+     <source src="./bg-music.mp3" type="audio/mpeg">
    </audio>
 
-    <button id="musicBtn" onclick="playMusic()" style="position: fixed;bottom:20px;right:20px;padding:12px 20px;background:#ff69b4;color:white;border-radius:25px;cursor:pointer;z-index:9999;">
-        ▶️Play Music
-    </button>
-    
-    <script>
-        function playMusic(){
-            var music = document.getElementById("bgMusic");
-            var btn = document.getElementById("musicBtn");
-            if (music.paused) {
-                music.play();
-                btn.innerHTML = "⏸️ Pause Music";
-            } else {
-              music.pause();
-              btn.innerHTML = "▶️ Play Music";
-            }
-        }
-    </script>
-</body>
+<button id="musicBtn" onclick="playMusic()" style="position:fixed;bottom:20px;right:20px;padding:14px 28px;background:#ff1493;color:white;border:none;border-radius:30px;cursor:pointer;z-index:9999;font-weight:bold;">
+  ▶️ Play Music
+</button>
+
+<script>
+function playMusic(){
+  var music = document.getElementById("bgMusic");
+  var btn = document.getElementById("musicBtn");
+  if (music.paused) {
+    music.play().then(function() {
+      btn.innerHTML = "⏸️ Pause Music";
+    }).catch(function(err) {
+      alert("Play avvadu: " + err.message);
+    });
+  } else {
+    music.pause();
+    btn.innerHTML = "▶️ Play Music";
+  }
+}
+</script>
+   </body>
 </html>
