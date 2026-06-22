@@ -212,17 +212,17 @@
 </button>
     
 <script>
-function playMusic(){
+function playMusic(btn){
   var music = document.getElementById("bgMusic");
-  var btn = event.target;
   if (music.paused) {
+    music.volume = 1;
     music.play();
-    btn.innerHTML = "Pause Music";
+    btn.innerText = "⏸️ Pause Music";
   } else {
     music.pause();
-    btn.innerHTML = "Play Music";
+    btn.innerText = "▶️ Play Music";
   }
 }
-</script> 
+</script>
 </body>
 </html>
