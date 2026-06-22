@@ -206,14 +206,14 @@
      <source sr="bg-music.mp3" type="audio/mpeg">
    </audio>
 
-    <button id="musicBtn" oncliclick="playMusic()" style="position: fixed;bottom:20px;right:20px;padding:12px 20px;background:#ff69b4;color:white;border-radius:25px;cursor:pointer;z-index:9999;">
+    <button id="musicBtn" onclick="playMusic()" style="position: fixed;bottom:20px;right:20px;padding:12px 20px;background:#ff69b4;color:white;border-radius:25px;cursor:pointer;z-index:9999;">
         ▶️Play Music
     </button>
     
     <script>
         function playMusic(){
             var music = document.getElementById("bgMusic");
-            var btn = document.getElementById("musicBth");
+            var btn = document.getElementById("musicBtn");
             if (music.paused) {
                 music.play();
                 btn.innerHTML = "⏸️ Pause Music";
